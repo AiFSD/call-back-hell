@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100vh;
+        font-size: 8em;
+        background-color: #f0f0f0;
+        padding-top: 20px;
+        flex-direction: column;
+      }
+      .bg {
+        background-image: url("https://i.pinimg.com/564x/3a/50/60/3a506054048f6282f7dec2ddfc017f28.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="countdown"></div>
+
+    <script>
+      var count = 10;
+      (function countdown() {
+        if (count > 0) {
+          document.getElementById("countdown").innerHTML = count;
+          count--;
+          setTimeout(countdown, 1000);
+        } else {
+          document.getElementById("countdown").innerHTML =
+            "Happy Independence Day!";
+          document.body.classList.add("bg");
+        }
+      })();
+    </script>
+  </body>
+</html>
